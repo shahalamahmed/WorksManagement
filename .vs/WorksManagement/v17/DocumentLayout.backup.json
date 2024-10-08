@@ -1,0 +1,314 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\controllers\\worktaskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\controllers\\worktaskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\views\\projects\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\views\\projects\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\views\\worktask\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\views\\worktask\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\views\\worktask\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\views\\worktask\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\views\\worktask\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\views\\worktask\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\models\\worktask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\models\\worktask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\migrations\\20241007182833_fixworktask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\migrations\\20241007182833_fixworktask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\worksmanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\worksmanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\views\\projects\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\views\\projects\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\migrations\\20241007042711_addprojectsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\migrations\\20241007042711_addprojectsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\migrations\\20241007054115_addworktaskdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\migrations\\20241007054115_addworktaskdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|c:\\users\\you tech bd\\source\\repos\\worksmanagement\\worksmanagement\\migrations\\20241007184628_fixworktaskdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFF8FD85-1B86-445C-AB2B-F7FECFF5245F}|WorksManagement\\WorksManagement.csproj|solutionrelative:worksmanagement\\migrations\\20241007184628_fixworktaskdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\WorkTask\\Edit.cshtml",
+              "RelativeDocumentMoniker": "WorksManagement\\Views\\WorkTask\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\WorkTask\\Edit.cshtml",
+              "RelativeToolTip": "WorksManagement\\Views\\WorkTask\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T04:34:40.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Models\\Project.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Models\\Project.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Models\\Project.cs",
+              "RelativeToolTip": "WorksManagement\\Models\\Project.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T04:10:02.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjectsController.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Controllers\\ProjectsController.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Controllers\\ProjectsController.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Controllers\\ProjectsController.cs",
+              "RelativeToolTip": "WorksManagement\\Controllers\\ProjectsController.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAowIAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T04:07:16.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\Projects\\Create.cshtml",
+              "RelativeDocumentMoniker": "WorksManagement\\Views\\Projects\\Create.cshtml",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\Projects\\Create.cshtml",
+              "RelativeToolTip": "WorksManagement\\Views\\Projects\\Create.cshtml",
+              "ViewState": "AgIAACsAAAAAAAAAAAAowD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-07T04:31:59.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WorkTask.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Models\\WorkTask.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Models\\WorkTask.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Models\\WorkTask.cs",
+              "RelativeToolTip": "WorksManagement\\Models\\WorkTask.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T04:10:27.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WorkTaskController.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Controllers\\WorkTaskController.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Controllers\\WorkTaskController.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Controllers\\WorkTaskController.cs",
+              "RelativeToolTip": "WorksManagement\\Controllers\\WorkTaskController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAowEgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T04:08:46.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\Projects\\Index.cshtml",
+              "RelativeDocumentMoniker": "WorksManagement\\Views\\Projects\\Index.cshtml",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\Projects\\Index.cshtml",
+              "RelativeToolTip": "WorksManagement\\Views\\Projects\\Index.cshtml",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAowEwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-07T04:31:26.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\WorkTask\\Index.cshtml",
+              "RelativeDocumentMoniker": "WorksManagement\\Views\\WorkTask\\Index.cshtml",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\WorkTask\\Index.cshtml",
+              "RelativeToolTip": "WorksManagement\\Views\\WorkTask\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-07T05:32:47.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\WorkTask\\Create.cshtml",
+              "RelativeDocumentMoniker": "WorksManagement\\Views\\WorkTask\\Create.cshtml",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\WorkTask\\Create.cshtml",
+              "RelativeToolTip": "WorksManagement\\Views\\WorkTask\\Create.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAowEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-07T05:32:19.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20241007182833_fixworkTask.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Migrations\\20241007182833_fixworkTask.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Migrations\\20241007182833_fixworkTask.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Migrations\\20241007182833_fixworkTask.cs",
+              "RelativeToolTip": "WorksManagement\\Migrations\\20241007182833_fixworkTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T18:28:35.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "20241007184628_fixWorkTaskDB.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Migrations\\20241007184628_fixWorkTaskDB.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Migrations\\20241007184628_fixWorkTaskDB.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Migrations\\20241007184628_fixWorkTaskDB.cs",
+              "RelativeToolTip": "WorksManagement\\Migrations\\20241007184628_fixWorkTaskDB.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T18:46:28.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "WorksManagement\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T04:04:52.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Program.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Program.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Program.cs",
+              "RelativeToolTip": "WorksManagement\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T04:01:42.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WorksManagement.csproj",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\WorksManagement.csproj",
+              "RelativeDocumentMoniker": "WorksManagement\\WorksManagement.csproj",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\WorksManagement.csproj",
+              "RelativeToolTip": "WorksManagement\\WorksManagement.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-07T04:03:25.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\Projects\\Edit.cshtml",
+              "RelativeDocumentMoniker": "WorksManagement\\Views\\Projects\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Views\\Projects\\Edit.cshtml",
+              "RelativeToolTip": "WorksManagement\\Views\\Projects\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-07T04:32:30.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20241007054115_addWorkTaskDB.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Migrations\\20241007054115_addWorkTaskDB.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Migrations\\20241007054115_addWorkTaskDB.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Migrations\\20241007054115_addWorkTaskDB.cs",
+              "RelativeToolTip": "WorksManagement\\Migrations\\20241007054115_addWorkTaskDB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T05:41:15.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20241007042711_AddProjectsDb.cs",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Migrations\\20241007042711_AddProjectsDb.cs",
+              "RelativeDocumentMoniker": "WorksManagement\\Migrations\\20241007042711_AddProjectsDb.cs",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\Migrations\\20241007042711_AddProjectsDb.cs",
+              "RelativeToolTip": "WorksManagement\\Migrations\\20241007042711_AddProjectsDb.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwBMAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T04:27:12.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\appsettings.json",
+              "RelativeDocumentMoniker": "WorksManagement\\appsettings.json",
+              "ToolTip": "C:\\Users\\YOU TECH BD\\source\\repos\\WorksManagement\\WorksManagement\\appsettings.json",
+              "RelativeToolTip": "WorksManagement\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-07T04:01:14.992Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

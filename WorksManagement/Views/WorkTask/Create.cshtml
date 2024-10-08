@@ -1,0 +1,69 @@
+﻿@model WorksManagement.Models.WorkTask
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Create Task</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data" class="row g-3">
+            <input type="hidden" asp-for="Id" /> <!-- Hidden field for task ID -->
+            <!-- Task Name -->
+            <div class="col-12 border p-3">
+                <div class="form-floating py-2">
+                    <input asp-for="Name" class="form-control border-0 shadow" />
+                    <label asp-for="Name">Task Name</label>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <!-- Task Code -->
+                <div class="form-floating py-2">
+                    <input asp-for="Code" class="form-control border-0 shadow" />
+                    <label asp-for="Code">Task Code</label>
+                    <span asp-validation-for="Code" class="text-danger"></span>
+                </div>
+
+                <!-- Associated Project (ProjectName) -->
+                <div class="form-floating py-2">
+                    <select asp-for="ProjectName" class="form-select border-0 shadow">
+                        <option value="">-- Select Project --</option>
+                        @foreach (var project in ViewBag.Projects)
+                        {
+                            <option value="@project.Name">@project.Name</option> <!-- Use Project Name -->
+                        }
+                    </select>
+                    <label asp-for="ProjectName">Project</label>
+                    <span asp-validation-for="ProjectName" class="text-danger"></span>
+                </div>
+
+                <!-- Task Status -->
+                <div class="form-floating py-2">
+                    <select asp-for="Status" class="form-select border-0 shadow">
+                        <option value="0">New</option>
+                        <option value="1">In Progress</option>
+                        <option value="2">Done</option>
+                    </select>
+                    <label asp-for="Status">Task Status</label>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+
+                <!-- Buttons -->
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control">Save</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="WorkTask" asp-action="Index" class="btn btn-outline-primary form-control">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

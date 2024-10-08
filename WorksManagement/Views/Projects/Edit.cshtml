@@ -1,0 +1,93 @@
+﻿@model Project
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Update Project</h2> <!-- Changed title -->
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data" class="row g-3">
+            <input type="hidden" asp-for="Id" /> <!-- Hidden field to bind the project ID -->
+
+            <div class="col-12 border p-3">
+                <!-- Project Name -->
+                <div class="form-floating py-2">
+                    <input asp-for="Name" class="form-control border-0 shadow" />
+                    <label asp-for="Name">Project Name</label>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <!-- Project Code -->
+                <div class="form-floating py-2">
+                    <input asp-for="Code" class="form-control border-0 shadow" />
+                    <label asp-for="Code">Project Code</label>
+                    <span asp-validation-for="Code" class="text-danger"></span>
+                </div>
+
+                <!-- Start Date -->
+                <div class="mb-4 row">
+                    <label asp-for="StartDate" class="mb-1"></label>
+                    <input asp-for="StartDate" id="startdate" class="form-control" placeholder="Select start date" />
+                </div>
+
+                <!-- End Date -->
+                <div class="mb-4 row">
+                    <label asp-for="EndDate" class="mb-1"></label>
+                    <input asp-for="EndDate" id="enddate" class="form-control" placeholder="Select end date" />
+                </div>
+
+                <!-- Project Status -->
+                <div class="form-floating py-2">
+                    <select asp-for="Status" class="form-select border-0 shadow">
+                        <option value="">Select Status</option>
+                        <option value="0">New</option>
+                        <option value="1">Ongoing</option>
+                        <option value="2">Postponed</option>
+                        <option value="3">Finished</option>
+                        <option value="4">Cancelled</option>
+                    </select>
+                    <label asp-for="Status">Project Status</label>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+
+                <!-- Buttons -->
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control" id="updateButton">Update</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Projects" asp-action="Index" class="btn btn-outline-primary form-control">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    flatpickr("#startdate", {
+        dateFormat: "Y-m-d", // Adjust format if needed
+        altInput: true,
+        altFormat: "F j, Y",
+    });
+
+    flatpickr("#enddate", {
+        dateFormat: "Y-m-d",
+        altInput: true,
+        altFormat: "F j, Y",
+    });
+</script>
