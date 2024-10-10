@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WorksManagement.Models;
+using System;
 
 namespace WorksManagement.Data
 {
@@ -15,6 +15,10 @@ namespace WorksManagement.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            
+
             // Seed data for Project
             modelBuilder.Entity<Project>().HasData(
                 new Project
@@ -24,7 +28,7 @@ namespace WorksManagement.Data
                     Code = "WD001",
                     StartDate = new DateTime(2024, 1, 1),
                     EndDate = new DateTime(2024, 6, 1),
-                    Status = ProjectStatus.Ongoing,
+                    Status = ProjectStatus.Ongoing
                 },
                 new Project
                 {
@@ -33,8 +37,10 @@ namespace WorksManagement.Data
                     Code = "MA002",
                     StartDate = new DateTime(2024, 3, 15),
                     EndDate = null,
-                    Status = ProjectStatus.New,
+                    Status = ProjectStatus.New
                 }
+
+
             );
         }
     }

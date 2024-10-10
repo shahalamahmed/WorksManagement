@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WorksManagement.Data;
 using WorksManagement.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WorksManagement.Controllers
 {
@@ -20,17 +21,19 @@ namespace WorksManagement.Controllers
 
 
         // Index - Display List of Projects with Search and Pagination
-        public IActionResult Index(string NameFilter, int page = 1, int pageSize = 6)
+        public IActionResult Index(string NameFilter, int page = 1, int pageSize = 10)
         {
             // Retrieve all projects
             var projects = from p in _db.Projects
                            select p;
-
             // Apply search filter
             if (!string.IsNullOrEmpty(NameFilter))
             {
-                projects = projects.Where(p => p.Name.Contains(NameFilter));
+                projects = projects.Where(p => p.Name.Contains(NameFilter)
+                || p.Code.Contains(NameFilter)) ;
+
             }
+            
 
             // Get the total count of projects after filtering
             int totalItems = projects.Count();
@@ -46,27 +49,43 @@ namespace WorksManagement.Controllers
 
             return View(projects.ToList());
         }
-        
-        // Create (GET)
+
+        // GET: Project/Create
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // Create (POST)
+        // POST: Project/Create
         [HttpPost]
-        [ValidateAntiForgeryToken] // Prevent CSRF attacks
-        public async Task<IActionResult> Create(Project obj)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Project project)
         {
+            // Check if the model state is valid
             if (ModelState.IsValid)
             {
-                _db.Projects.Add(obj);
+                // Check if a project with the same name already exists
+                bool projectExists = await _db.Projects.AnyAsync(p => p.Name == project.Name);
+                if (projectExists)
+                {
+                    // Add a model error if the project name already exists
+                    ModelState.AddModelError("Name", "This name already exists. Please choose a different name.");
+                    return View(project);
+                }
+
+                // If the name is unique, proceed to add the project
+                _db.Add(project);
                 await _db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
 
-            return View(obj);
+            // If the model state is not valid, redisplay the form with validation errors
+            return View(project);
         }
+
+
+
         // Edit (GET)
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
@@ -97,6 +116,7 @@ namespace WorksManagement.Controllers
 
             return View(project);
         }
+        // Delete (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
@@ -109,8 +129,8 @@ namespace WorksManagement.Controllers
                 return NotFound();
             }
 
-            // Find and delete related WorkTasks with the same Project Name
-            var relatedTasks = _db.WorkTasks.Where(t => t.ProjectName == project.Name).ToList();
+            // Find and delete related WorkTasks
+            var relatedTasks = _db.WorkTasks.Where(t => t.ProjectId == project.Id).ToList();
             if (relatedTasks.Any())
             {
                 _db.WorkTasks.RemoveRange(relatedTasks);
@@ -123,9 +143,7 @@ namespace WorksManagement.Controllers
             await _db.SaveChangesAsync();
 
             TempData["Success"] = "Project and related tasks deleted successfully!";
-
             return RedirectToAction("Index");
         }
-
     }
 }

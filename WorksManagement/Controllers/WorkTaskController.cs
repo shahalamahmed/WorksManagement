@@ -18,7 +18,8 @@ namespace WorksManagement.Controllers
 
         public async Task<IActionResult> Index(string nameFilter, int page = 1, int pageSize = 6)
         {
-            var workTasksQuery = _db.WorkTasks.AsQueryable();
+            // Query to fetch tasks including related Project data
+            var workTasksQuery = _db.WorkTasks.Include(t => t.Project).AsQueryable();
 
             // Apply filtering by task name
             if (!string.IsNullOrEmpty(nameFilter))
@@ -42,36 +43,43 @@ namespace WorksManagement.Controllers
             ViewData["CurrentPage"] = page;
             ViewData["PageSize"] = pageSize;
 
+            // Pass the paginated and filtered tasks to the view
             return View(workTasks);
         }
-        // Create (GET)
-        public IActionResult Create()
+
+
+        // GET: WorkTask/Create
+        public async Task<IActionResult> Create()
         {
-            // Fetching project names for the dropdown
-            ViewBag.Projects = _db.Projects.Select(p => new { p.Name }).ToList();
+            ViewBag.Projects = new SelectList(await _db.Projects.ToListAsync(), "Id", "Name");
             return View();
         }
 
-        // Create (POST)
+        // POST: WorkTask/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create (WorkTask obj)
+        public async Task<IActionResult> Create(WorkTask obj)
         {
             if (!ModelState.IsValid)
             {
-                _db.WorkTasks.Add(obj);
+                _db.Add(obj);
                 await _db.SaveChangesAsync();
-                return RedirectToAction("Index");
+
+                // Optionally display a success message or redirect to a list view
+                return RedirectToAction(nameof(Index));
             }
 
-            // Repopulate the ViewBag in case of validation failure
-            ViewBag.Projects = _db.Projects.Select(p => new { p.Name }).ToList();
+            // If model state is invalid, reload projects list and return the view
+            ViewBag.Projects = new SelectList(await _db.Projects.ToListAsync(), "Id", "Name", obj.ProjectId);
             return View(obj);
         }
+
+
         // Edit (GET)
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
+            ViewBag.Projects = new SelectList(await _db.Projects.ToListAsync(), "Id", "Name");
             var workTask = await _db.WorkTasks.FindAsync(id);
 
             if (workTask == null)
@@ -87,7 +95,7 @@ namespace WorksManagement.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(WorkTask workTask)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _db.WorkTasks.Update(workTask);
                 await _db.SaveChangesAsync();
@@ -95,9 +103,39 @@ namespace WorksManagement.Controllers
                 TempData["Success"] = "Task updated successfully!";
                 return RedirectToAction("Index");
             }
-
+            // If model state is invalid, reload projects list and return the view
+            ViewBag.Projects = new SelectList(await _db.Projects.ToListAsync(), "Id", "Name", workTask.ProjectId);
             return View(workTask);
         }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var workTask = await _db.WorkTasks.FindAsync(id);
+            if (workTask == null)
+            {
+                return NotFound();
+            }
 
+            return View(workTask); // Optional: return a confirmation view
+        }
+
+        // Delete (POST) - ensure this matches your form action
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var workTask = await _db.WorkTasks.FindAsync(id);
+            if (workTask == null)
+            {
+                return NotFound();
+            }
+
+            _db.WorkTasks.Remove(workTask);
+            await _db.SaveChangesAsync();
+
+            TempData["Success"] = "Task deleted successfully!";
+            return RedirectToAction("Index");
+        }
     }
+  
 }

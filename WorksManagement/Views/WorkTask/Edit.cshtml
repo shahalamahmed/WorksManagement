@@ -4,42 +4,46 @@
     ViewData["Title"] = "Edit Task";
 }
 
-<h2>Edit Task</h2>
+<h2 class="mx-auto text-center">Edit Task</h2>
 
 <div class="row">
-    <div class="col-md-6">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6 mx-auto">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <form asp-action="Edit" id="editTaskForm">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control rounded-pill shadow-sm" placeholder="Enter Task Name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="Code" class="control-label"></label>
-                <input asp-for="Code" class="form-control" />
-                <span asp-validation-for="Code" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Code" class="control-label"></label>
+                        <input asp-for="Code" class="form-control rounded-pill shadow-sm" placeholder="Enter Task Code" />
+                        <span asp-validation-for="Code" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="ProjectName" class="control-label"></label>
-                <input asp-for="ProjectName" class="form-control" />
-                <span asp-validation-for="ProjectName" class="text-danger"></span>
-            </div>
+                    <div class="form-group">
+                        <label asp-for="ProjectId" class="control-label"></label>
+                        <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.Projects"></select>
+                        <span asp-validation-for="ProjectId" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<WorksManagement.Models.TaskStatus>()"></select>
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-4">
+                        <label asp-for="Status" class="control-label"></label>
+                        <select asp-for="Status" class="form-control rounded-pill shadow-sm" asp-items="Html.GetEnumSelectList<WorksManagement.Models.TaskStatus>()"></select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group mt-3">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary" id="saveButton" disabled>Save</button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -47,4 +51,67 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const $saveButton = $('#saveButton');
+
+            $('#editTaskForm input, #editTaskForm select').on('input change', function () {
+                $saveButton.prop('disabled', false).removeClass('btn-secondary').addClass('btn-primary');
+            });
+
+            $('#editTaskForm').on('submit', function (e) {
+                e.preventDefault(); // Prevent default form submission
+
+                // Show success message using SweetAlert
+                Swal.fire({
+                    title: 'Success!',
+                    text: "Task updated successfully.",
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 5000, // Show for 5 seconds
+                    timerProgressBar: true,
+                }).then(() => {
+                    this.submit(); // Submit the form after confirmation
+                });
+            });
+
+            // Initially disable the button
+            $saveButton.prop('disabled', true).addClass('btn-secondary');
+        });
+    </script>
 }
+
+<style>
+    /* Custom styles for the form */
+    .card {
+        border: 1px solid #e0e0e0; /* Light border color */
+    }
+
+    .form-control {
+        border-radius: 25px; /* Rounded edges for input fields */
+        border: 1px solid #ced4da; /* Light border color */
+        transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+    }
+
+        .form-control:focus {
+            border-color: #80bdff; /* Border color on focus */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Box shadow on focus */
+        }
+
+    .btn-primary {
+        background-color: #007bff; /* Primary button color */
+        border-color: #007bff; /* Border color for primary button */
+    }
+
+    .btn-secondary {
+        background-color: #6c757d; /* Secondary button color */
+        border-color: #6c757d; /* Border color for secondary button */
+    }
+
+        .btn-secondary:disabled {
+            background-color: #e9ecef; /* Disabled button color */
+            color: #6c757d; /* Text color for disabled button */
+        }
+</style>

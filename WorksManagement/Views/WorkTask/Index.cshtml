@@ -17,12 +17,17 @@
     </div>
 </form>
 
+<!-- Create Project Button -->
+<div class="text-center mb-4">
+    <a asp-action="Create" class="btn btn-secondary" style="width: 150px; height: 50px; font-size: 18px;">Create Task</a>
+</div>
+
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Task Name</th>
             <th>Task Code</th>
-            <th>Project Name</th>
+            <th>Project Name</th> <!-- Display Project Name here -->
             <th>Status</th>
             <th>Actions</th>
         </tr>
@@ -33,12 +38,12 @@
             <tr>
                 <td>@task.Name</td>
                 <td>@task.Code</td>
-                <td>@task.ProjectName</td>
+                <td>@task.Project?.Name</td> <!-- Display Project.Name instead of ProjectId -->
                 <td>@task.Status</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@task.Id" class="btn btn-warning">Edit</a>
                     <button class="btn btn-danger delete-btn" data-id="@task.Id" data-name="@task.Name">Delete</button>
-                    <form id="delete-form-@task.Id" action="@Url.Action("Delete", new { id = task.Id })" method="post" style="display:none;">
+                    <form id="delete-form-@task.Id" action="@Url.Action("DeleteConfirmed", new { id = task.Id })" method="post" style="display:none;">
                         @Html.AntiForgeryToken()
                     </form>
                 </td>

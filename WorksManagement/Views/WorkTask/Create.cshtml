@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="card-body p-4">
-        <form asp-action="Create" method="post" enctype="multipart/form-data" class="row g-3">
+        <form asp-action="Create" method="post" enctype="multipart/form-data" class="row g-3" id="createTaskForm">
             <input type="hidden" asp-for="Id" /> <!-- Hidden field for task ID -->
             <!-- Task Name -->
             <div class="col-12 border p-3">
@@ -27,16 +27,10 @@
                 </div>
 
                 <!-- Associated Project (ProjectName) -->
-                <div class="form-floating py-2">
-                    <select asp-for="ProjectName" class="form-select border-0 shadow">
-                        <option value="">-- Select Project --</option>
-                        @foreach (var project in ViewBag.Projects)
-                        {
-                            <option value="@project.Name">@project.Name</option> <!-- Use Project Name -->
-                        }
-                    </select>
-                    <label asp-for="ProjectName">Project</label>
-                    <span asp-validation-for="ProjectName" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="ProjectId" class="control-label"></label>
+                    <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.Projects"></select>
+                    <span asp-validation-for="ProjectId" class="text-danger"></span>
                 </div>
 
                 <!-- Task Status -->
@@ -53,7 +47,7 @@
                 <!-- Buttons -->
                 <div class="row pt-2">
                     <div class="col-6 col-md-3">
-                        <button type="submit" class="btn btn-primary form-control">Save</button>
+                        <button type="submit" class="btn btn-primary form-control" id="saveButton" disabled>Save</button>
                     </div>
                     <div class="col-6 col-md-3">
                         <a asp-controller="WorkTask" asp-action="Index" class="btn btn-outline-primary form-control">Back to List</a>
@@ -66,4 +60,45 @@
 
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Function to check form validity
+        function checkFormValidity() {
+            const form = document.getElementById('createTaskForm');
+            const saveButton = document.getElementById('saveButton');
+
+            // Check if all input fields have values
+            const isValid = Array.from(form.elements).every(input => {
+                return input.type !== 'submit' && input.value.trim() !== '';
+            });
+
+            // Enable or disable save button
+            saveButton.disabled = isValid; // Disable button when not valid
+            saveButton.classList.toggle('btn-secondary', isValid); // Change button color when disabled
+        }
+
+        // Attach event listeners to input fields and select elements
+        document.querySelectorAll('#createTaskForm input, #createTaskForm select').forEach(input => {
+            input.addEventListener('input', checkFormValidity);
+        });
+
+        // Form submission handler
+        document.getElementById('createTaskForm').addEventListener('submit', function (event) {
+            if (!this.checkValidity()) {
+                event.preventDefault(); // Prevent form submission
+                return;
+            }
+
+            // Show SweetAlert if form is valid
+            Swal.fire({
+                title: 'Task Created!',
+                text: 'Your task has been successfully created.',
+                icon: 'success',
+                confirmButtonText: 'Okay',
+                timer: 5000, // Set timer for 5 seconds
+                timerProgressBar: true // Show progress bar
+            });
+        });
+    </script>
 }

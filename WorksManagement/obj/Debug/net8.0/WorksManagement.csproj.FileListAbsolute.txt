@@ -134,3 +134,4 @@ C:\Users\YOU TECH BD\source\repos\WorksManagement\WorksManagement\obj\Debug\net8
 C:\Users\YOU TECH BD\source\repos\WorksManagement\WorksManagement\obj\Debug\net8.0\WorksManagement.pdb
 C:\Users\YOU TECH BD\source\repos\WorksManagement\WorksManagement\obj\Debug\net8.0\WorksManagement.genruntimeconfig.cache
 C:\Users\YOU TECH BD\source\repos\WorksManagement\WorksManagement\obj\Debug\net8.0\ref\WorksManagement.dll
+C:\Users\YOU TECH BD\source\repos\WorksManagement\WorksManagement\obj\Debug\net8.0\WorksManagement.sourcelink.json

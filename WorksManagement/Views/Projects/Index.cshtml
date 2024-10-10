@@ -4,42 +4,49 @@
     var nameFilter = ViewData["NameFilter"] as string ?? "";
     var totalItems = (int)(ViewData["TotalItems"] ?? 0);
     var currentPage = (int)(ViewData["CurrentPage"] ?? 1);
-    var pageSize = (int)(ViewData["PageSize"] ?? 6);
+    var pageSize = (int)(ViewData["PageSize"] ?? 10);
     var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
 }
 
-<h2>Project List</h2>
+<h2 class="text-center mb-4">Project List</h2>
 
 <form method="get" action="@Url.Action("Index")" class="d-flex justify-content-center mb-4">
     <div class="input-group" style="max-width: 600px; width: 100%;">
-        <input type="text" name="NameFilter" value="@nameFilter" placeholder="Search by Name" class="form-control text-center" style="height: 50px; font-size: 18px;" />
+        <input type="text" name="NameFilter" value="@nameFilter" placeholder="Search by Name or Code" class="form-control text-center" style="height: 50px; font-size: 18px;" />
         <button type="submit" class="btn btn-primary" style="width: 120px; height: 50px; font-size: 18px;">Search</button>
     </div>
 </form>
 
-<table class="table table-striped">
-    <thead>
+<!-- Create Project Button -->
+<div class="text-center mb-4 p-3">
+    <a asp-action="Create" class="btn btn-secondary" style="width: 150px; height: 50px; font-size: 18px;">Create Project</a>
+</div>
+<table class="table table-hover table-bordered text-center align-middle" style="width: 100%; table-layout: fixed;">
+    <thead style="background: linear-gradient(to right, #f06, #06f); color: #fff;">
         <tr>
-            <th>Name</th>
-            <th>Code</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Status</th>
-            <th>Actions</th>
+            <th scope="col" style="width: 5%;">SL</th>
+            <th scope="col">Name</th>
+            <th scope="col">Code</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var project in Model)
+    <tbody style="background-color: #f7f9fa;">
+        @for (int i = 0; i < Model.Count(); i++)
         {
+            var project = Model.ElementAt(i);
             <tr>
+                <td>@(i + 1)</td>
                 <td>@project.Name</td>
                 <td>@project.Code</td>
                 <td>@project.StartDate.ToString("yyyy-MM-dd")</td>
                 <td>@project.EndDate?.ToString("yyyy-MM-dd")</td>
                 <td>@project.Status</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@project.Id" class="btn btn-warning">Edit</a>
-                    <button class="btn btn-danger delete-btn" data-id="@project.Id" data-name="@project.Name">Delete</button>
+                    <a asp-action="Edit" asp-route-id="@project.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <button class="btn btn-danger btn-sm delete-btn" data-id="@project.Id" data-name="@project.Name">Delete</button>
                     <form id="delete-form-@project.Id" action="@Url.Action("Delete", new { id = project.Id })" method="post" style="display:none;">
                         @Html.AntiForgeryToken()
                     </form>

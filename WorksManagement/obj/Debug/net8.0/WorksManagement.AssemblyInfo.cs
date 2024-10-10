@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorksManagement")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b80e5afa16394fd30495389af13624fd399d285d")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorksManagement")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorksManagement")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WorksManagement.Models
 {
@@ -19,9 +20,13 @@ namespace WorksManagement.Models
         public string Code { get; set; }
 
         // Removing ProjectId and using ProjectName instead
+
         [Required]
-        [DisplayName("Project Name")]
-        public string ProjectName { get; set; }
+        [ForeignKey("Project")]
+        [DisplayName("Project")]
+        public int ProjectId { get; set; }
+
+        public Project Project { get; set; }
 
         [Required]
         [DisplayName("Task Status")]

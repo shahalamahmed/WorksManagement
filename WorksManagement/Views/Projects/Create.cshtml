@@ -18,18 +18,18 @@
         </div>
     </div>
     <div class="card-body p-4">
-        <form method="post" enctype="multipart/form-data" class="row g-3">
+        <form method="post" enctype="multipart/form-data" class="row g-3" id="projectForm">
             <div class="col-12 border p-3">
                 <!-- Project Name -->
                 <div class="form-floating py-2">
-                    <input asp-for="Name" class="form-control border-0 shadow" />
+                    <input asp-for="Name" class="form-control border-0 shadow rounded" />
                     <label asp-for="Name">Project Name</label>
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
 
                 <!-- Project Code -->
                 <div class="form-floating py-2">
-                    <input asp-for="Code" class="form-control border-0 shadow" />
+                    <input asp-for="Code" class="form-control border-0 shadow rounded" />
                     <label asp-for="Code">Project Code</label>
                     <span asp-validation-for="Code" class="text-danger"></span>
                 </div>
@@ -37,19 +37,18 @@
                 <!-- Start Date -->
                 <div class="mb-4 row">
                     <label asp-for="StartDate" class="mb-1"></label>
-                    <input asp-for="StartDate" id="startdate" class="form-control" placeholder="Select start date" />
+                    <input asp-for="StartDate" id="startdate" class="form-control border-0 shadow rounded" placeholder="Select start date" />
                 </div>
 
                 <!-- End Date -->
                 <div class="mb-4 row">
                     <label asp-for="EndDate" class="mb-1"></label>
-                    <input asp-for="EndDate" id="enddate" class="form-control" placeholder="Select end date" />
+                    <input asp-for="EndDate" id="enddate" class="form-control border-0 shadow rounded" placeholder="Select end date" />
                 </div>
-
 
                 <!-- Project Status -->
                 <div class="form-floating py-2">
-                    <select asp-for="Status" class="form-select border-0 shadow">
+                    <select asp-for="Status" class="form-select border-0 shadow rounded">
                         <option value="">Select Status</option>
                         <option value="0">New</option>
                         <option value="1">Ongoing</option>
@@ -64,7 +63,7 @@
                 <!-- Buttons -->
                 <div class="row pt-2">
                     <div class="col-6 col-md-3">
-                        <button type="submit" class="btn btn-primary form-control" id="createButton">Create</button>
+                        <button type="submit" class="btn btn-primary form-control" id="createButton" disabled>Create</button>
                     </div>
                     <div class="col-6 col-md-3">
                         <a asp-controller="Project" asp-action="Index" class="btn btn-outline-primary form-control">Back to List</a>
@@ -76,8 +75,9 @@
 </div>
 
 <script>
+    // Initialize flatpickr
     flatpickr("#startdate", {
-        dateFormat: "Y-m-d", // Adjust format if needed
+        dateFormat: "Y-m-d",
         altInput: true,
         altFormat: "F j, Y",
     });
@@ -87,4 +87,42 @@
         altInput: true,
         altFormat: "F j, Y",
     });
+
+    // Function to check if all form fields are filled
+    function checkFormFields() {
+        const allFilled = $('#projectForm input').filter(function () {
+            return $.trim($(this).val()).length === 0;
+        }).length === 0 && $('#projectForm select').val() !== "";
+
+        // Enable or disable the submit button based on field values
+        if (allFilled) {
+            $('#createButton').prop('disabled', false);
+            $('#createButton').removeClass('btn-secondary').addClass('btn-primary');
+        } else {
+            $('#createButton').prop('disabled', true);
+            $('#createButton').removeClass('btn-primary').addClass('btn-secondary');
+        }
+    }
+
+    // Bind the input and select fields to the check function
+    $('#projectForm input, #projectForm select').on('input change', checkFormFields);
+
+    // SweetAlert for successful form submission
+    $('#projectForm').submit(function (e) {
+        e.preventDefault(); // Prevent actual form submission
+
+        // Perform form submission via AJAX (or handle normally if not using AJAX)
+        this.submit();
+
+        // Show SweetAlert success message for 5 seconds
+        Swal.fire({
+            title: 'Your project has been created.',
+            icon: 'success',
+            timer: 5000,
+            showConfirmButton: false
+        });
+    });
+
+    // Initial check for form fields
+    checkFormFields();
 </script>
